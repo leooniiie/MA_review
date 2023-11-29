@@ -1,0 +1,82 @@
+
+Some Metrics to compare the models:
+
+GRU 
+Accuracy: 0.9817811144909715, Precision: 0.0 , Recall: 0.0,
+Zeit zum erstellen und trainieren: 3910.19153547287 Sekunden
+Trainloss: 0.08466947823762894 , Testloss: 0.08203354477882385 , minimal Testloss: 0.08200498670339584 
+Model: "sequential_3"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ rnn_6 (RNN)                 (None, 16, 64)            62784     
+                                                                 
+ rnn_7 (RNN)                 (None, 64)                24768     
+                                                                 
+ dense_3 (Dense)             (None, 2)                 130       
+                                                                 
+=================================================================
+Total params: 87,682
+Trainable params: 87,682
+Non-trainable params: 0
+_________________________________________________________________
+
+phased GRU 
+Accuracy: 0.9840625202252281, Precision: 0.7816245006657789 , Recall: 0.1737714624037892,
+Zeit zum erstellen und trainieren: 5010.639159679413 Sekunden
+Trainloss: 0.0664580762386322 , Testloss: 0.07277463376522064 , minimal Testloss: 0.07217662036418915 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ rnn (RNN)                   (None, 16, 65)            62659     
+                                                                 
+ rnn_1 (RNN)                 (None, 64)                24835     
+                                                                 
+ dense (Dense)               (None, 2)                 130       
+                                                                 
+=================================================================
+Total params: 87,624
+Trainable params: 87,624
+Non-trainable params: 0
+_________________________________________________________________
+
+LSTM 
+Accuracy: 0.9817811144909715, Precision: 0.0 , Recall: 0.0,
+Zeit zum erstellen und trainieren: 5665.628086805344 Sekunden
+Trainloss: 0.08230143785476685 , Testloss: 0.0819423496723175 , minimal Testloss: 0.08190959692001343 
+Model: "sequential_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ rnn_4 (RNN)                 (None, 16, 64)            83712     
+                                                                 
+ rnn_5 (RNN)                 (None, 64)                33024     
+                                                                 
+ dense_2 (Dense)             (None, 2)                 130       
+                                                                 
+=================================================================
+Total params: 116,866
+Trainable params: 116,866
+Non-trainable params: 0
+_________________________________________________________________
+
+phased LSTM 
+Accuracy: 0.9837173429982957, Precision: 0.7328145265888456 , Recall: 0.16725873297809354,
+Zeit zum erstellen und trainieren: 11807.695781469345 Sekunden
+Trainloss: 0.06731409579515457 , Testloss: 0.07300244271755219 , minimal Testloss: 0.07287734001874924 
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ rnn_2 (RNN)                 (None, 16, 65)            83523     
+                                                                 
+ rnn_3 (RNN)                 (None, 64)                33091     
+                                                                 
+ dense_1 (Dense)             (None, 2)                 130       
+                                                                 
+=================================================================
+Total params: 116,744
+Trainable params: 116,744
+Non-trainable params: 0
+_________________________________________________________________

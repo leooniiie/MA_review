@@ -1,0 +1,92 @@
+\chapter{Value allocation with Shapley}
+
+In the machine learning world, one often deals with \say{black box} models. This refers to the fact that those models take some input and return an output with no explanation or interpretation of what leads to this result. 
+Shapley values have been introduced as a game theoretic approach to determine the value of each player in an n-person game. Nowadays the same approach is applied to machine learning \say{black box} models to determine the value of the input feature expression.\\
+
+In the previous chapter, we introduced the structure of a conversion prediction model that fits the black box characterization. While the hope is that the additional time gate lead to even more precise conversion prediction results our main goal of determining the importance of each marketing channel for conversion still remains unanswered by this neural network. 
+We assume that a well-trained prediction network has learned the importance of the individual channels and the influence they have on each other, which then can be extracted using SHAP values. \\
+The goal of this chapter is to give an overview of the origin of the game-theoretic value attribution approach known as Shapley values and its application to machine learning especially in the form of SHapley Additive exPlanatios (SHAP).
+
+\section{Origin of Shapley}
+Shapley values were introduced as a solution to assign a value to each player in cooperative game theory.
+Lloyd Shapley first published his \say{notes on n-person game}\cite{shapley-1951} where he describes how to allocate value to each player, having applications in economy or military in mind. He collected and refined his ideas which he published a year later \cite{shapley-1952} titled \say{The value of n-Person Games}.
+\begin{definition}
+    Shapley defines a \textit{game} as a subadditive set-function $v$ from the set of all players $U$ to the real numbers, satisfying: 
+    \begin{itemize}
+        \item $v(\emptyset)=0$
+        \item $v(S) \geq v(S\cap T) +v(S\setminus T)\textrm{, for all } S,T\subseteq U$
+    \end{itemize}  
+\end{definition}
+\begin{definition}
+    A \textit{carrier} of $v$ is any set $N\subseteq U$ with:$$v(S)=v(N\cap S) \textrm{ for all }S \subseteq U$$
+\end{definition}
+\begin{definition}
+    \color{red}permutation\color{black}
+\end{definition}
+\begin{definition}
+    The value of a game $\phi(v)$ is defined as a function that maps each player $i\in U$ to a real number $\phi_i(v)$ and satisfies the following three axioms \color{red} he calls it axioms but they are actually properties imo \color{black}
+    \begin{description}
+        \item[Axiom 1:] For each $\pi \in \Pi(U)$, $$\phi_{\pi i}(\pi v) = \phi_i(v) \textrm{, for all } i \in U $$
+        \item[Axiom 2:] For each carrier $N$ of $v$,
+        $$\sum_N \phi_i(v) = v(N)$$
+        \item[Axiom 3:] For any two games $v$ and $w$, 
+        $$\phi(v+w)=\phi(v)+\phi(w)$$
+        \color{red} explanation what axiom does \color{black}
+    \end{description}
+\end{definition}
+
+\begin{theorem}
+    There exists a unique value function $\phi$ satisfying axioms 1-3, for games $v$ with finite carriers $N$. 
+    $$\phi_i(v) = \sum_{S\subseteq N} \gamma_n(s)[v(S)-v(S\setminus\{i\})] \textrm{, for all } i \in U$$
+    with $\gamma_n(s):= \frac{(s-1)!(n-s)!}{n!}.$
+\end{theorem}
+
+The Axioms can be easily verified, for proof see \cite{shapley-1952}. 
+The resulting values of these functions are nowadays known as Shapley values( of a n-person game).
+
+\section{Shapley in ML}
+The problem in explaining machine learning models is that they are too complicated to directly interpret as is possible for example for the parameters in linear regression. 
+Therefore it is necessary to implement a simplified explanation model that can be interpreted. One class of possible explanation models are the additive feature attribution methods. The following section will summarise the application of explanations for machine learning models as presented in detail by \cite{lundberg-2017}. \\
+First of all, assume a model $f$ and input $x$ that is to be explained.
+
+We then consider simplified inputs $x'$ that map the original inputs $x=h_x(x')$. A local explanation model $g$ tries to ensure that $g(z')\approx f(h_x(z'))$, where $z'\approx x'$. This model $g$ is simple enough to give explanations of the features values.
+
+\begin{definition}
+   The explanation model of additive feature attribution methods is a linear function of binary variables: $$g(z') = \phi_0 + \sum_{i=1}^M \phi_i z_i',$$ where $z'\in\{0,1\}^M$, M is the number of simplified input features, and $\phi_i\in\R$.
+\end{definition}
+Some additive feature attribution methods are LIME (Locally Interpretable Model-agnostic Explanations) cite{Marco Tulio Ribeiro why should I trust you}, DeepLift cite{Avanti Shrikumar learning important features} or Layer-wise relevance propagation cite{Sebastian bach On pixel-wise explanations}. 
+When transferring the Shapley values to a machine learning setting the input features (or their expression) are equivalent to the players in game theory the question remains how to define a game value for a subset of features.\\
+There are some ways to estimate the classic Shapley value. \\
+Probably the directest way is using Shapley regression values which require refitting the model on all possible subsets $S$ of features $F$:
+\begin{align}
+    \phi_i = \sum _{S\subseteq F} \frac{\abs{S}!(\abs{F}-\abs{S}-1)!}{\abs{F}!}\left[f_{S\cup \{i\}}(x_{S\cup \{i\}})-f_S(x_S)\right],
+\end{align}
+where $f_S$ is the model trained on the feature subset $S$ and $x_S$ is the input vector restricted to the features in $S$. With $\phi_0= f_{\emptyset}(\emptyset)$ this model belongs to the additive feature attribution methods. 
+Also, two methods called Shapley sampling values and Quantitative input influence use the same approach as in (4.1), but add some approximation methods to reduce the amount of necessary computations.
+
+One often instead resorts to SHAP, short for Shapley Additive exPlanations, which belongs to the additive feature attribution methods and is closely related to Shapley values and often used synonymously.
+SHAP values have been proposed by \cite{lundberg-2017}.
+they, introduce three desired properties for explanation models.\\
+Assume a model $f$ with input $x$ for which we want a local explanation using an explanation model $g$ and simplified input $x'$. Then this model should hold the following properties: 
+\begin{property}[Local accuracy]
+    $$f(x)=g(x')=\phi_0+\sum_{i=1}^M\phi_i x_i'$$
+    The explanation model should match the output of $f$ at least for the original input $x$.
+\end{property}
+\begin{property}[Missingness] 
+    $$x_i'=0\Longrightarrow\phi_i=0$$
+    When the simplified input indicates a feature as missing, it shouldn't have any attributed impact.
+\end{property}
+\begin{property}[Consistency]
+    Let $f_x(z') = f(h_x(z'))$ and $z'\setminus i$ denote setting $z_i'=0$. For any two models $f$ and $f'$, if
+    $$ f_x'(z')-f_x'(z'\setminus i)\geq f_x(z')-f_x(z'\setminus i)\textrm{, for all } z'\in\{0,1\}^M,$$
+    then $\phi_i(f',x) \geq \phi_i(f,x)$.
+\end{property}
+\begin{theorem}
+    With the condition of fulfilling property 1-3 and also definition 4.6 there is only one possible explanation model:
+    \begin{align}
+        \phi_i(f,x)= \sum_{z'\subseteq x'} \frac{\abs{z'}!(M-\abs{z'}-1)!}{M!} \left[ f_x(z') -f_x(z'\setminus i)\right]
+    \end{align}
+\end{theorem}
+For the SHAP Shapley Additive eXplanations we use this explanation model and $f_x(z') = f(h_x(z')) = \bE \left[ f(z)\ \vert\ z_S \right]$ with $S$ being the set of the non-zero indexes of $z'$.
+The resulting SHAP values \say{closely align with the Shapley regression, Shapley sampling, and quantitative input influence feature attributions, while also allowing for connections with LIME, DeepLIFT, and layer-wise relevance propagation}(\cite{lundberg-2017}).
+They also note that concrete calculation is very complicated \color{red} but estimation \color{black}

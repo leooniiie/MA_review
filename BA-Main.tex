@@ -1,0 +1,206 @@
+\documentclass[12pt,enabledeprecatedfontcommands,bibtotoc]{scrreprt}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{bbm}
+\usepackage{hyperref}
+\usepackage{bigints}
+\usepackage{graphicx}
+\usepackage{leftidx}
+\usepackage{enumerate}
+\usepackage{aligned-overset}
+\usepackage{cases}
+\usepackage{cite}
+\usepackage{theoremref}
+\usepackage{dirtytalk}
+\usepackage[toc]{appendix}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\usepackage{xcolor}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ %total={160mm,247mm},
+ left=30mm,
+ top=25mm,
+ right=20mm,
+ bottom=25mm
+ }
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{positioning,chains}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{neuralnetwork}
+%\usepackage{mathrsfs} für \mathscr
+%\usepackage{draftwatermark}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkScale{1}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{explanation}{Explanation}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Property}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollar}
+\newtheorem{motivation}[theorem]{Motivation}
+\newtheorem{notation}[theorem]{Notation}
+
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bK}{\mathbb{K}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cR}{\mathcal{R}}
+
+\newcommand{\one}{\mathbbm{1}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\lvert}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+
+%\renewcommand{\listfigurename}{List of plots}
+%\renewcommand{\listtablename}{Tables}
+
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\imag}{Im}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Dim}{Dim}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\prob}{\mathbb{P}}
+\DeclareMathOperator{\plim}{plim}
+
+\setcounter{chapter}{0}
+
+\sloppy
+
+\begin{document}
+\onehalfspacing
+\begin{titlepage}
+\includegraphics[height=1.8cm]{images/unilogo_bild}
+\hfill
+\includegraphics[height=1.8cm]{images/unilogo_wort}\\[1em]
+
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\textwidth28cm
+\begin{center}
+{\Large\bfseries Ulm University\\
+   Faculty for Mathematics and Economics\\
+}
+\vspace{3cm}
+{\LARGE\bfseries
+Developing and Evaluating a Marketing Attribution Model: 
+A Time-Gated Approach with Gated Recurrent Units for Conversion Prediction
+\\
+}
+\vspace{1cm}
+{\Large
+Masterthesis} \\
+\bigskip % nach löschen dieser Zeile ein \bigskip einfügen.
+{\Large in Mathematics and Management}
+\end{center}
+\vspace{1.5cm}
+\begin{center}
+by \\
+$\mbox{Leonie Allgaier}$ \\
+$\mbox{\today}$\\
+
+\vspace*{1.2cm}
+\textbf{Thesis Supervisor} \\
+
+$\mbox{Prof. Dr. Steffen Zimmermann}$
+\end{center}
+\vfill
+\end{titlepage}
+
+
+${ }$
+
+\newpage
+
+\tableofcontents
+\listoffigures
+%\listoftables
+\pagenumbering{roman}
+\setcounter{page}{1} \normalsize
+\setstretch{1.5}
+\clearpage
+\pagenumbering{arabic}
+\input{01_Introduction.tex}
+\input{02_MarketingAttribution.tex}
+\input{03_phased_GRU.tex}
+\input{04_Value allocation with shapley.tex}
+\input{05_The Data.tex}
+\input{06_The Model.tex}
+\input{07_Conclusion}
+
+\bibliographystyle{apalike}
+\bibliography{Quellen}
+
+
+\begin{appendix}
+\input{appendix}
+\end{appendix}
+
+\input{08_statutory_declaration.tex}
+
+${ } $
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

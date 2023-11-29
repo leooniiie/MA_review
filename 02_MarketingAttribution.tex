@@ -1,0 +1,40 @@
+\chapter{Marketing attribution}
+
+Using the definition by \cite{buhalis-2021} marketing attribution describes \say{a strategy of determining the value of marketing communications and allocating it to identified touchpoints along customer journeys}. 
+This chapter aims to give a consistent and concise overview of marketing attribution. To do this, first, the necessary taxonomy, as established by \cite{buhalis-2021}, will be introduced and some possible marketing attribution models will be presented.\\
+
+To derive the importance of different marketing channels, marketing attribution relies on collecting and evaluating data on customer level.\\ 
+When talking about this kind of data each interaction between a customer and a brand is referred to as a \textit{touchpoint} that occurs via one \textit{marketing channel} (i.e. visiting a website, seeing a banner ad, receiving a marketing email). The \textit{customer journey} is the collection of all (available) touchpoints between a customer and a brand. \\ 
+For every customer journey, the fact of whether this customer ended up buying a product/subscribing to a service is documented and called \textit{conversion}.\\
+
+Marketing attribution started with Single-Touch attribution, which describes the process of attributing conversion only to a single touchpoint per customer journey. 
+The main two approaches for Single-Touch attribution are first- and last-touch attribution with the justification that the first touchpoint made a customer aware of the brand and the last touchpoint is the most recent touchpoint therefore probably the reason for the decision to finally buy. \\
+While those explanations sound reasonable and already provide some insight for a brand, the true decision-making process is often more complex and the whole customer journey influences a customer's decision-making process. 
+Multi-touch attribution (MTA)) recognizes that conversion cannot be attributed to one singular touchpoint and that the whole collection of touchpoints in each customer journey must be taken into account. Inspired by the first- and last-click approach there are some easy heuristic multi-touch attribution models allocating the same impact to each touchpoint in the customer journey or doing some reweighting putting more emphasis on the first and/or last touchpoint while still considering what happens in between. \\
+There are some difficulties that can stand in the way of exact marketing attribution. One thing is that we can't assume complete data, it's very possible to miss touchpoints. This can happen if a customer uses different devices that cannot be linked, or when the customer is confronted with analog advertisement which obviously cannot be tracked as easily. Also, one can't be sure if a customer actually registered an ad when it is presented on screen.\\
+Another thing is that each customer is unique and has a different process of decision-making, and things like personal preferences simply can't be observed. \\
+\color{red}Still, with the data that is available nowadays marketing attribution has been shown to be effective for developing more efficient marketing strategies and a achieve improved return on investment (ROI)  \cite {there is a source for this}  \color{black}
+
+Looking at customer journeys, the influence of a touchpoint on a customer's decision can be either positive or negative and also depends on the timing within the customer journey and the other touchpoints surrounding it. 
+Furthermore, it's not necessary, that the effects of the touchpoints in a customer journey are cumulative.  This makes each customer journey unique, which can be difficult. \\
+More complex MTA strategies can reflect those complex decision-making processes even better and due to increasing available data quality and quantity, advancements in Big Data, and the increasing number of potential touchpoints (i.e. new marketing channels) data-driven methods for marketing attribution have emerged to capture how the touchpoints interact and influence each other. 
+Those approaches include Survival Analysis, Markov Chains, and Neural Networks which are constantly extended to become even more accurate.\\ 
+
+\section{Using deep learning for Multi-touch attribution}\\
+This thesis focuses specifically on the application of neural networks and deep learning in the context of marketing attribution. 
+Deep learning models are very good at predicting outcomes or classifying but due to their complexity and black-box nature can't be interpreted easily. To get to value attribution we rely on finding to make a deep learning model interpretable.\\
+To overcome this problem a second step in addition to the conversion prediction network is necessary. This second step uses Shapley Values, an important concept from game theory that can be transferred to deep learning and is frequently used for explainable AI tasks and in our case can give us the importance of the different marketing channels. That's why, especially recently, a big focus has been on combining deep learning models with Shapley values for marketing attribution. \color{red} klingt noch nicht ganz überzeugend\color{black}
+
+A few examples of existing MTA models that are based on conversion prediction using a neural network:
+\begin{itemize}
+    \item \textbf{RNN\cite{du-2019}:} They implemented a recurrent neural network (RNN) for conversion prediction with \say{a large set of user features $\left[...\right]$ as synthetic control} to prevent confounding bias and make causal interpretations of the Shapley Values of the marketing channels.
+    \item \textbf{DARNN \cite{ren-2018}:} Uses a Dual-attention recurrent neural network that \say{learns the attribution values $[...]$ directly from the conversion objective} which means they don't need the additional step of Shapley explanations, they observe impressions as well as click events and try to predict/estimate both.
+    \item \textbf{DNAMTA \cite{li-2018}:} Combine an LSTM network with survival time-decay functions and similar to \cite{du-2019} also use some user information as control variables.
+    \item \textbf{CAMTA \cite{kumar-2020}:} For the CAMTA (Casual Attention Model for Multi-touch Attribution) a \say{causal RNN}  is trained to eliminate time-varying confounders by not only observing conversion but also further interaction with the channel (click event).
+    \item \textbf{CausalMTA \cite{yao-2022}:} Another approach to eliminate confounders in order to get an unbiased model which can be interpreted causally. They decompose the confounding bias into a static and dynamic part and prove the effectiveness of their model.
+    \item \textbf{DeepMTA \cite{yang-2020}:} For their DeepMTA model they used a phased LSTM network and Shapley explanations and achieved great improvements in conversion predictions with the additional time-gate in their LSTM cell.
+\end{itemize}
+
+Overall the trend is shifting towards using LSTM networks, especially now, that good implementations exist, for example in Pytorch and Tensorflow, that can be applied directly to the MTA. 
+What cannot be found frequently amongst marketing attribution models are gated recurrent unit (GRU) networks even though they often perform just as good as LSTM and contain fewer parameters that need to be trained and therefore require fewer storage space and fewer computations for training and prediction.
+The goal of this thesis is to implement a similar marketing attribution model as \cite{yang-2020} as the added time gate led to substantially improved predictions compared to the base LSTM but with GRU instead of LSTM cells, to combine their advantages.
