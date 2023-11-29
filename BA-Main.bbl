@@ -1,0 +1,85 @@
+\begin{thebibliography}{}
+
+\bibitem[Buhalis and Volchek, 2021]{buhalis-2021}
+Buhalis, D. and Volchek, K. (2021).
+\newblock {Bridging marketing theory and big data analytics: The taxonomy of
+  marketing attribution}.
+\newblock {\em International Journal of Information Management}, 56:102253.
+
+\bibitem[Cho, 2014]{cho-2014}
+Cho, K. (2014).
+\newblock {Learning Phrase Representations using RNN Encoder-Decoder for
+  Statistical Machine Translation}.
+
+\bibitem[Du, 2019]{du-2019}
+Du, R. (2019).
+\newblock {Causally Driven Incremental Multi Touch Attribution Using a
+  Recurrent Neural Network}.
+
+\bibitem[Hochreiter and Schmidhuber, 1997]{hochreiter-1997}
+Hochreiter, S. and Schmidhuber, J. (1997).
+\newblock {Long Short-Term Memory}.
+\newblock {\em Neural Computation}, 9(8):1735--1780.
+
+\bibitem[Kumar et~al., 2020]{kumar-2020}
+Kumar, S., Gupta, G., Prasad, R., Chatterjee, A., Vig, L., and Shroff, G.~R.
+  (2020).
+\newblock {CAMTA: Causal Attention Model for Multi-touch Attribution}.
+
+\bibitem[Li, 2018]{li-2018}
+Li, N. (2018).
+\newblock {Deep Neural Net with Attention for Multi-channel Multi-touch
+  Attribution}.
+
+\bibitem[Lundberg and Lee, 2017]{lundberg-2017}
+Lundberg, S.~M. and Lee, S.-I. (2017).
+\newblock {A unified approach to interpreting model predictions}.
+\newblock volume~30, pages 4768--4777.
+
+\bibitem[Neil et~al., 2016]{neil-2016}
+Neil, D., Pfeiffer, M., and Liu, S.-C. (2016).
+\newblock {Phased LSTM: Accelerating Recurrent Network Training for Long or
+  Event-based Sequences}.
+\newblock volume~29, pages 3882--3890.
+
+\bibitem[Patton, 2022]{patton-2022}
+Patton, PhD, D. (2022).
+\newblock {Using TensorFlow ragged tensors - towards data science}.
+
+\bibitem[Ren et~al., 2018]{ren-2018}
+Ren, K., Fang, Y., Zhang, W., Liu, S., Li, J., Zhang, Y., Yu, Y., and Wang, J.
+  (2018).
+\newblock {Learning Multi-touch Conversion Attribution with Dual-attention
+  Mechanisms for Online Advertising}.
+
+\bibitem[Shapley, 1951]{shapley-1951}
+Shapley, L.~S. (1951).
+\newblock {Notes on the N-Person Game — II: The Value of an N-Person Game}.
+
+\bibitem[Shapley, 1952]{shapley-1952}
+Shapley, L.~S. (1952).
+\newblock {A value for N-Person Games}.
+
+\bibitem[Sherstinsky, 2020]{sherstinsky-2020}
+Sherstinsky, A. (2020).
+\newblock {Fundamentals of Recurrent Neural Network (RNN) and Long Short-Term
+  Memory (LSTM) network}.
+\newblock {\em Physica D: Nonlinear Phenomena}.
+
+\bibitem[TensorFlow, 2023]{unknown-author-2023}
+TensorFlow (2023).
+\newblock {GRUCell}.
+\newblock {\em
+  https://www.tensorflow.org/api\_docs/python/tf/keras/layers/GRUCell}.
+
+\bibitem[Yang, 2020]{yang-2020}
+Yang, D. (2020).
+\newblock {Interpretable Deep Learning Model for Online Multi-touch
+  Attribution}.
+
+\bibitem[Yao et~al., 2022]{yao-2022}
+Yao, D., Gong, C.-D., Zhang, L., Chen, S., and Bi, J. (2022).
+\newblock {CausalMTA: Eliminating the User Confounding Bias for Causal
+  Multi-touch Attribution}.
+
+\end{thebibliography}

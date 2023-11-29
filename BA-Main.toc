@@ -1,0 +1,25 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Marketing attribution}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Using deep learning for Multi-touch attribution}{4}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Phased Gated Recurrent Units Network}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Neural Networks}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Training a neural network}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}RNN}{10}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Gated Recurrent Units}{12}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Time gate}{14}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Value allocation with Shapley}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Origin of Shapley}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Shapley in ML}{18}{section.4.2}%
+\contentsline {chapter}{\numberline {5}The Data}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data Description}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data Transformation}{26}{section.5.2}%
+\contentsline {chapter}{\numberline {6}The Model}{28}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Implementation of phased GRU}{28}{section.6.1}%
+\contentsline {section}{\numberline {6.2}SHAP}{31}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Metrics}{32}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Evaluation}{34}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusion/Outlook}{38}{chapter.7}%
+\contentsline {chapter}{\nonumberline Bibliography}{39}{chapter*.3}%
+\contentsline {chapter}{\numberline {A}Appendix}{41}{appendix.A}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

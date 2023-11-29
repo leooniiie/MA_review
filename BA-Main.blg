@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: BA-Main.aux
+White space in argument---line 29 of file BA-Main.aux
+ : \citation{there
+ :                 is a source for this}
+I'm skipping whatever remains of this command
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+Database file #1: Quellen.bib
+Warning--empty booktitle in kumar-2020
+Warning--empty booktitle in lundberg-2017
+Warning--empty booktitle in neil-2016
+Warning--empty journal in patton-2022
+Warning--empty booktitle in ren-2018
+Warning--empty journal in shapley-1951
+Warning--empty journal in shapley-1952
+Warning--empty booktitle in yao-2022
+You've used 16 entries,
+            1935 wiz_defined-function locations,
+            545 strings with 5776 characters,
+and the built_in function-call counts, 5612 in all, are:
+= -- 534
+> -- 224
+< -- 16
++ -- 74
+- -- 74
+* -- 425
+:= -- 993
+add.period$ -- 38
+call.type$ -- 16
+change.case$ -- 117
+chr.to.int$ -- 16
+cite$ -- 24
+duplicate$ -- 240
+empty$ -- 388
+format.name$ -- 96
+if$ -- 1088
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 12
+newline$ -- 73
+num.names$ -- 48
+pop$ -- 129
+preamble$ -- 1
+purify$ -- 117
+quote$ -- 0
+skip$ -- 192
+stack$ -- 0
+substring$ -- 321
+swap$ -- 28
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 96
+warning$ -- 8
+while$ -- 41
+width$ -- 0
+write$ -- 178
+(There was 1 error message)
