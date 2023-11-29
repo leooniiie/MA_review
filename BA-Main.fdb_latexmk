@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex BA-Main"] 1701270188 "BA-Main.aux" "BA-Main.bbl" "BA-Main" 1701270188 2
+["bibtex BA-Main"] 1701270188 "BA-Main.aux" "BA-Main.bbl" "BA-Main" 1701270789 2
   "./Quellen.bib" 1701270015 5632 9c18cff8796c67630d0329604af7652f ""
-  "BA-Main.aux" 1701270184 15368 b9f9d51206d6a02be6ddb42dbe6e4b11 "pdflatex"
+  "BA-Main.aux" 1701270788 15368 b9f9d51206d6a02be6ddb42dbe6e4b11 "pdflatex"
   "C:/Users/lachlinu/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   (generated)
   "BA-Main.bbl"
   "BA-Main.blg"
   (rewritten before read)
-["pdflatex"] 1701270176 "BA-Main.tex" "BA-Main.pdf" "BA-Main" 1701270188 2
-  "01_Introduction.tex" 1701270015 1155 6d25bd6deb152af3479091ea37fdc813 ""
+["pdflatex"] 1701270780 "BA-Main.tex" "BA-Main.pdf" "BA-Main" 1701270789 2
+  "01_Introduction.tex" 1701270247 1182 4636448301d57da02381a9935dafd01c ""
   "02_MarketingAttribution.tex" 1701270015 7679 30d990ae83a584b39fca6a279a5cad78 ""
   "03_phased_GRU.tex" 1701270015 26280 cc15d1a3a7690678e3e8b1d3d4a5b048 ""
   "04_Value allocation with shapley.tex" 1701270015 8110 25ad97f4187d016a810f244d442027f8 ""
@@ -16,12 +16,12 @@
   "06_The Model.tex" 1701270015 17896 bdf5d55e9f8e55ba72b2fafdbdb4ee4f ""
   "07_Conclusion.tex" 1701270015 798 91fa811f16214b5a4f29b54f12bd4c3c ""
   "08_statutory_declaration.tex" 1701270015 718 81e223355d829a1ced6a15ae2c84c7e7 ""
-  "BA-Main.aux" 1701270184 15368 b9f9d51206d6a02be6ddb42dbe6e4b11 "pdflatex"
+  "BA-Main.aux" 1701270788 15368 b9f9d51206d6a02be6ddb42dbe6e4b11 "pdflatex"
   "BA-Main.bbl" 1701270188 2989 68f1121b9b05310da821ebebfc781fe4 "bibtex BA-Main"
-  "BA-Main.lof" 1701270184 1760 89ec72fa4e49efded285645784ad2420 "pdflatex"
-  "BA-Main.out" 1701270181 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "BA-Main.lof" 1701270788 1760 89ec72fa4e49efded285645784ad2420 "pdflatex"
+  "BA-Main.out" 1701270786 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "BA-Main.tex" 1701270174 5179 c70f9aeb5205bbed96b82ad3b465f4f7 ""
-  "BA-Main.toc" 1701270184 1844 4f89f5ea1e884fd5da7393d947077331 "pdflatex"
+  "BA-Main.toc" 1701270788 1844 4f89f5ea1e884fd5da7393d947077331 "pdflatex"
   "C:/Users/lachlinu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1701270148 83966 82a4cce0098ce0c08898614fb1e2cd02 ""
   "C:/Users/lachlinu/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbm/dpi600/bbm12.pk" 1701270156 8448 5b05e3caacf92d8b2b7720f3938d3c2f ""
   "C:/Users/lachlinu/AppData/Local/MiKTeX/fonts/tfm/public/bbm/bbm10.tfm" 1701017479 560 39fd35b5e4a6aca3672660cc548ba860 ""
